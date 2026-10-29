@@ -1,0 +1,38 @@
+/* ==========================================================================
+   CUSTOM SCROLLBAR STYLING
+   Overrides WebKit browser scrollbar styles for product grids and scroll panels.
+   ========================================================================== */
+
+/* Target global browser scrollbars; sets vertical width and horizontal height to 6 pixels */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Background track container behind the draggable scrollbar handle */
+::-webkit-scrollbar-track {
+    background: #f1f5f9; /* Slate 100 light background tint */
+}
+
+/* Draggable thumb scrollbar handle */
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;       /* Slate 300 neutral gray thumb color */
+    border-radius: 9999px;     /* Fully rounded pill shape */
+}
+
+/* Scrollbar handle hover state when user hovers mouse over it */
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8; /* Slate 400 darker contrast color */
+}
+
+/* ==========================================================================
+   RECEIPT DESIGN UTILITY
+   Simulates a realistic jagged paper edge effect for receipt popups.
+   ========================================================================== */
+.receipt-edge {
+    /* Uses repeated radial gradients to form cut circles simulating paper receipts */
+    background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%);
+    
+    /* Defines repeating dimensions of cut serrations */
+    background-size: 10px 10px;
+}```
