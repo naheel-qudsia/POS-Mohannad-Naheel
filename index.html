@@ -1,9 +1,70 @@
-<html>
-  <head>
-    <title>My App</title>
-  </head>
-  <body>
-    <h1>Welcome to My App</h1>
-    <p>This is a simple HTML page.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store POS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="sc.js" defer></script>
+</head>
+
+<body>
+
+    <header class="store-header">
+        <div class="store-info">
+            <h1>My Store POS</h1>
+            <p>Point of Sale System</p>
+        </div>
+
+        <input type="text" id="product-search" placeholder="Search products...">
+    </header>
+
+
+    <main>
+
+        <section class="products-section">
+
+            <h2>Products</h2>
+            <div id="products" class="products-grid"></div>
+        </section>
+
+        <section class="order-section">
+            
+            <h2>Current Order</h2>
+
+            <div id="order">
+                <p class="empty-message">No products selected.</p>
+            </div>
+
+            <div class="order-summary">
+                <p>Total items: <span id="item-count">0</span></p>
+                <p>Subtotal: $<span id="subtotal">0.00</span></p>
+                <h3>Total: $<span id="total">0.00</span></h3>
+            </div>
+
+            <div class="order-buttons">
+                <button id="clear-order" class="clear-button">
+                    Clear Order
+                </button>
+
+                <button id="complete-sale" class="pay-button">
+                    Pay Now
+                </button>
+            </div>
+
+            <div id="receipt"></div>
+              <div class="order-buttons2">
+                <button id="new-order" class="New-Order-button">
+                    New Order
+                </button>
+              </div>
+           
+        </section>
+    </main>
+
+ 
+
+</body>
+
 </html>
