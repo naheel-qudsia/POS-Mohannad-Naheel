@@ -1,0 +1,382 @@
+/* General page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #111;
+    line-height: 1.6;
+}
+
+
+/* Header layout */
+.store-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 5%;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.store-info h1 {
+    margin: 0 0 5px;
+    font-size: 30px;
+}
+
+.store-info p {
+    margin: 0;
+    color: #cccccc;
+}
+
+/* Search input */
+#product-search {
+    width: 100%;
+    max-width: 400px;
+    padding: 14px 16px;
+    margin: 0;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #111111;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#product-search:focus {
+    border-color: #999999;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .store-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+
+    .store-info h1 {
+        font-size: 25px;
+    }
+
+    #product-search {
+        max-width: none;
+    }
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 0;
+    color: #ccc;
+}
+
+/* Main layout */
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr);
+    /* divides the page into two columns
+    fr means fraction of the available space*/
+    gap: 35px;
+    max-width: 1500px;
+    margin: 45px auto;
+    padding: 0 35px;
+    align-items: start;
+}
+
+/* Main sections */
+.products-section,
+.order-section {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0 0 28px;
+    letter-spacing: 0.3px;
+}
+
+/* Product grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Product cards */
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+.product-card h3 {
+    margin: 0;
+    padding: 20px 16px 8px 16px;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #171717;
+}
+
+.product-price {
+    margin: 0;
+    padding: 5px 16px 10px 16px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #111111;
+}
+
+/* Product images */
+
+.product-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    margin-bottom: 0;
+}
+
+
+/* Product information */
+.product-info {
+    padding: 18px;
+}
+
+.product-info h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* Buttons */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.add-button {
+    display: block;
+    width: calc(100% - 44px);
+    margin: 0 16px 16px;
+    padding: 14px 16px;
+    border: 1px solid #111111;
+    border-radius: 10px;
+    background-color: #111111;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+}
+
+
+.add-button:hover {
+    background-color: #333;
+}
+
+/* Order items */
+.order-item {
+    padding: 22px 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.order-item h3 {
+    margin: 0 0 12px;
+    font-size: 17px;
+}
+
+.order-item p {
+    margin: 9px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Quantity and remove buttons */
+.order-item button {
+    padding: 9px 14px;
+    margin: 10px 7px 0 0;
+    background-color: #eee;
+    color: #111;
+}
+
+.order-item button:hover {
+    background-color: #ddd;
+}
+
+.order-item .remove-button {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #bbb;
+}
+
+.order-item .remove-button:hover {
+    background-color: #eee;
+}
+
+/* Order summary */
+.order-summary {
+    margin-top: 28px;
+    padding: 22px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+}
+
+.order-summary p {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.order-summary h3 {
+    border-top: 1px solid #ddd;
+    padding-top: 18px;
+    margin-bottom: 0;
+    font-size: 21px;
+    color: #111;
+}
+
+/* Bottom buttons */
+.order-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.order-buttons button {
+    flex: 1;
+    padding: 14px 10px;
+}
+
+.clear-button {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #bbb;
+}
+
+.clear-button:hover {
+    background-color: #eee;
+}
+
+.pay-button {
+    background-color: #111;
+    color: #fff;
+}
+
+.pay-button:hover {
+    background-color: #333;
+}
+
+/* Empty order */
+.empty-message {
+    padding: 35px 10px;
+    text-align: center;
+    color: #777;
+}
+
+/* Receipt */
+.receipt-box {
+    margin-top: 25px;
+    padding: 22px;
+    background-color: #fafafa;
+    border: 1px dashed #999;
+    border-radius: 10px;
+}
+
+.receipt-box h3 {
+    color: #111;
+}
+
+/* Tablet layout */
+@media (max-width: 1050px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 30px auto;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    header {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    main {
+        padding: 0 14px;
+        margin: 20px auto;
+        gap: 20px;
+    }
+
+    .products-section,
+    .order-section {
+        padding: 18px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .product-image {
+        height: 240px;
+    }
+
+    .product-info {
+        padding: 25px 22px 28px;
+    }
+
+    .product-info h3 {
+        font-size: 14px;
+    }
+
+    .product-price {
+        font-size: 17px;
+    }
+
+    .add-button {
+        font-size: 12px;
+    }
+
+    .order-buttons {
+        flex-direction: column;
+    }
+}
