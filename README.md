@@ -42,7 +42,6 @@ The main goal of this project is to practice JavaScript fundamentals, DOM manipu
 ### E. Additional Features (Bonus)
 - **Product Search:** Search for products by name.
 - **Date and Time:** Display the current date and time on the receipt.
-- **Sales History:** Display completed transactions during the current session.
 
 ## 4. Project Structure
 
@@ -78,7 +77,6 @@ This project focuses on the cashier's main POS screen and JavaScript fundamental
 - No user authentication.
 - No inventory management.
 - No real payment gateway integration.
-- Sales history is stored temporarily during the current session and is not permanently saved.
 - Order data is not retained after refreshing the page.
 
 
