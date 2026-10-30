@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Store POS</title>
     <link rel="stylesheet" href="style.css">
+    <script src="sc.js" defer></script>
 </head>
 
 <body>
@@ -29,6 +30,7 @@
         </section>
 
         <section class="order-section">
+            
             <h2>Current Order</h2>
 
             <div id="order">
@@ -47,16 +49,22 @@
                 </button>
 
                 <button id="complete-sale" class="pay-button">
-                    Complete Sale
+                    Pay Now
                 </button>
             </div>
 
             <div id="receipt"></div>
+              <div class="order-buttons2">
+                <button id="new-order" class="New-Order-button">
+                    New Order
+                </button>
+              </div>
+           
         </section>
     </main>
 
-    <script src="sc.js"></script>
-    
+ 
+
 </body>
 
 </html>

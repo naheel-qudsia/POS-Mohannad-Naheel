@@ -277,15 +277,24 @@ button {
     flex: 1;
     padding: 14px 10px;
 }
+.order-buttons2 {
+    display: none;
+    gap: 14px;
+    margin-top: 25px;
+}
 
+.order-buttons2 button {
+    flex: 1;
+    padding: 14px 10px;
+}
 .clear-button {
-    background-color: #fff;
-    color: #111;
+    background-color: #d22828;
+    color: #ffffff;
     border: 1px solid #bbb;
 }
 
 .clear-button:hover {
-    background-color: #eee;
+    background-color: #b22222;
 }
 
 .pay-button {
@@ -295,6 +304,14 @@ button {
 
 .pay-button:hover {
     background-color: #333;
+}
+.New-Order-button {
+    background-color: #2eac3f;
+    color: #fff;
+}
+
+.New-Order-button:hover {
+    background-color: #0d931a;
 }
 
 /* Empty order */

@@ -28,6 +28,7 @@ const receiptContainer = document.querySelector("#receipt");
 const clearButton = document.querySelector("#clear-order");
 const completeButton = document.querySelector("#complete-sale");
 const searchInput = document.querySelector("#product-search");
+const orderButtons = document.querySelector('.order-buttons2');
 
 // Display and search products
 function displayProducts(searchText = "") {
@@ -124,6 +125,7 @@ function addProduct(productId) {
     displayOrder();
 }
 
+
 // Display order and calculate prices
 function displayOrder() {
     orderContainer.innerHTML = "";
@@ -143,11 +145,24 @@ function displayOrder() {
         subtotal += itemTotal;
         totalItems += item.quantity;
 
+        let discount = 0;
+        if (subtotal > 100) {
+            discount = subtotal * 0.1; // 10% discount
+            subtotal -= discount;
+        }
+
+        // Declare discountText properly before using it
+        let discountText = "";
+        if (discount > 0) {
+            discountText = `<p>Discount: $${discount.toFixed(2)}</p>`;
+        }
+
         orderContainer.innerHTML += `
             <div class="order-item">
                 <div>
                     <h3>${item.name}</h3>
                     <p>Unit price: $${item.price.toFixed(2)}</p>
+                    ${discountText}
                     <p>Item total: $${itemTotal.toFixed(2)}</p>
 
                     <div class="quantity-controls">
@@ -238,6 +253,7 @@ completeButton.addEventListener("click", function () {
         return;
     }
 
+
     let receiptItems = "";
     let finalTotal = 0;
 
@@ -250,14 +266,22 @@ completeButton.addEventListener("click", function () {
         receiptItems += `
             <p>
                 ${item.name} x ${item.quantity}
-                — $${itemTotal.toFixed(2)}
+                — $${itemTotal.toFixed(2)}  ($${item.price.toFixed(2)} each)
             </p>
         `;
     }
 
+  const now = new Date();
+    const formattedDate = now.toLocaleDateString(); // e.g., 10/30/2026
+    const formattedTime = now.toLocaleTimeString(); // e.g., 2:30:00 PM
+
+    // 2. Add the date and time to the receipt HTML
     receiptContainer.innerHTML = `
         <div class="receipt-box">
-            <h3>Sale Completed!</h3>
+            <h3>Order Summary!</h3>
+            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">
+                Date: ${formattedDate} | Time: ${formattedTime}
+            </p>
             ${receiptItems}
             <hr>
             <h3>Total Paid: $${finalTotal.toFixed(2)}</h3>
@@ -267,6 +291,27 @@ completeButton.addEventListener("click", function () {
 
     order = [];
     displayOrder();
+
+
+    // Hide the Pay/Clear buttons and show the New Order button group
+    document.querySelector(".order-buttons").style.display = "none";
+    orderButtons.style.display = "flex";
+});
+
+// Handle the New Order button click to reset everything
+const newOrderButton = document.querySelector("#new-order");
+
+newOrderButton.addEventListener("click", function () {
+    // 1. Clear the receipt
+    receiptContainer.innerHTML = "";
+
+    // 2. Reset search input and refresh product grid
+    searchInput.value = "";
+    displayProducts();
+
+    // 3. Hide the New Order button and bring back the Pay/Clear buttons
+    orderButtons.style.display = "none";
+    document.querySelector(".order-buttons").style.display = "flex";
 });
 
 // Start the POS system
